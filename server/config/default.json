@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 500,
+    "max": 1000
+  },
+  "authentication": {
+    "secret": "b3677e07c8df2727897096d871b21ed9da3822b730c547236d28fa72177324af236c84c598c1e348c2cbfbbffad0ae966923716b3b3f8949c8d76a4eead4d61964a870a32bbcfbbc74d29515f654620b88cdb22992fbc22521268ff551856446466272f3048d1e0e680746221e479bdcac2141dedc2cf1a4bcecae4959e92c810e29a856e5c2a9d8e8536b943170479c946e52aa800a3e4e52571332d73beb0d5649fda70f98752646753c0064165aa7f2306dfd896b995ba0e3a9e9747e393c693c66ed47a1d54f15219c9e1a59524f431330fb8daf85ff157bec96b1383f69f22f92f91bcd61b4eca655e34f76b0512ffad8b13b3a0e0d0f399a5c4d86af5b",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://board.junk.yard",
+      "subject": "auth",
+      "issuer": "junk.yard",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/bello_server"
+}
